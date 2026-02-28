@@ -19,4 +19,11 @@ app.use(express.static("src/views"));
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/products", require("./routes/productRoutes"));
 
+// Ruta raíz
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "API funcionando correctamente 🚀"
+  });
+});
+
 module.exports = app;
